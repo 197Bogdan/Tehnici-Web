@@ -1,0 +1,70 @@
+<header>
+	<h1  id="top"><a href="home">FMS Guides</a>	
+        <img src = ./resurse/imagini/FMS.screen.png alt = "fms" id = "fms">
+		<% if(locals.user) {%>
+			<div id="user-info">
+				<p><span id="lvl">Lv. <%- locals.user.lvl %></span><span id="name"> <%- locals.user.username %></span> (<%- locals.user.race %>)</p>
+				<p id="kingdom"><%-locals.user.kingdom %> Kingdom</p>
+				<p>Exp: <span id="exp"><%-locals.user.exp %></span>/<span id="exp-needed">20</span></p>
+				<p><a href="logout">Logout</a></p>
+			</div>
+		<% } 
+		else { %>
+        <form id="login" method="post" action="http://localhost:8081/login">
+            <label for="username-input" id="username">Username:</label> <input id="username-input" type="text" name="username">
+            <label for="password-input" id="password">Password:</label> <input id="password-input" type="text" name="password">
+            <input id="login-button" type="submit" value="Login"><a id="signup" href="signup">Sign Up</a>
+			<% if(locals.login == "no") { %>
+				<label id="invalid"><strong>Invalid Account!</strong></label>
+			<% } %>
+		</form>
+		<% } %>
+    </h1>
+    <nav>
+		<label for="chk-meniu" ><img id="img_meniu" src="./resurse/imagini/Hamburger_icon_alb.png" alt="meniu"> </label>
+		<input type="checkbox" id="chk-meniu" />
+		<ul class="meniu">
+			<li>
+				<div>Bonuses</div>
+				<ul class="submeniu">
+					<li><a href="bonusuri_explicate">Explained</a></li>	<!-- adauga pagina cu status perfect -->
+					<li><a href="bonusuri_tierlist">Tierlist</a></li>	<!-- camuflaj si ambuscada, risipa, etc.-->
+				</ul>
+			</li>
+			<li>
+				<div>Items</div>
+				<ul class="submeniu">
+					<li><a href="iteme_perfecte">Perfect Item Set</a></li>
+					<li><a href="iteme_speciale">Special Items Explained</a></li>
+				</ul>
+			</li>
+			<li>
+				<div>Bugs</div>
+				<ul class="submeniu">
+					<li><a href="Buguri">HP</a></li>
+					<li><a href="Buguri">Skills</a></li>
+					<li><a href="Buguri">Others</a></li>
+				</ul>
+			</li>
+			<li>
+				<div>Others</div>
+				<ul class="submeniu">
+					<li><a href="status">Perfect Status</a></li>
+					<li><a href="skilluri">Skills Explained</a></li>
+				</ul>
+			</li>
+
+			<li>
+				<div>About</div>
+				<ul class="submeniu">                        
+					<li><a href="despre">Purpose</a></li>
+					<li><a href="despre">Information Source</a></li>
+					<li><a href="despre">Author</a></li>
+					<li><a href="despre">Contact</a></li>
+				</ul>
+			</li>
+		</ul>
+
+	</nav>
+
+</header>

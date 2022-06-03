@@ -1,0 +1,23 @@
+html{
+    font-size:17px;
+}
+
+body{
+    background-color: lightblue;
+}
+
+
+main{
+    margin-left:40px;
+    margin-right:40px;
+}
+
+a {
+	text-decoration:none;
+    color: black;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: rgb(102, 102, 253);
+}

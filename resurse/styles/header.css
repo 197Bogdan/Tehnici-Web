@@ -1,0 +1,203 @@
+#top{
+    font-size: 50px;
+    margin-left: 20px;
+    margin-top: -60px;
+}
+
+.circle {
+    height: 40px;
+    width: 40px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    font-size: 12px;
+    text-align: center;
+    line-height: 40px;
+    position: relative;
+  }
+
+
+#user-info{
+    position:absolute;
+    right: 20px;
+    top: 20px;
+    font-size: 18px;
+    -webkit-text-stroke-width: 0.4px;
+    -webkit-text-stroke-color: black;
+    background-color: rgb(251, 251, 122);
+    border-radius: 20px;
+    padding: 10px;
+    border: black solid 1px;
+    color: yellow;
+}
+#user-info > p{
+    margin: 0px;
+    text-align: right;
+    font-weight: normal;
+}
+
+#lvl {
+    color: rgb(0, 255, 0);
+    font-size: 22px;
+}
+#name {
+    color: yellow;
+    font-size: 25px;
+}
+
+#login{
+    position: absolute;
+    right: 20px;
+    font-size: 17px;
+    top: 20px;
+    display: grid;
+    grid-template-areas: "username username_input username_input"
+                         "password password_input password_input"
+                         ". login signup"
+                         ". invalid invalid";
+}
+
+#login > p {
+    padding: 0px;
+    margin: 0px;
+}
+
+#username {grid-area: username;}
+#password {grid-area: password;}
+#username-input {grid-area: username_input;}
+#password-input {grid-area: password_input;}
+#signup {grid-area: signup; text-align: center;}
+#login-button {grid-area: login;}
+#invalid {
+    grid-area: invalid; 
+    color: red;
+    -webkit-text-stroke-width: 0.2px;
+    -webkit-text-stroke-color: black;
+}
+
+#chk-meniu, #img_meniu{
+    display: none;
+}
+
+#fms {
+    position: relative;
+    top: 50px;
+    width: 50px;
+  animation: animatie_fms 6s infinite linear;
+}
+nav {
+    position: relative;
+    top: 10px;
+}
+.meniu {
+	display: flex;
+	justify-content: center;
+
+}
+
+.meniu>li{
+	list-style-type:none;
+	background:rgb(240, 238, 166);
+	border-width: 2px;
+	border-style: solid;
+	border-color: black;
+	height: 25px;
+
+    font-size: 19px;
+	text-align: center;
+	font-weight: bold;
+	transition: background-color 0.7s ease 0.2s, transform 0.5s;
+    width:15%;
+}
+.meniu>li:hover{
+    transform:scale(1.05);
+    overflow:visible;
+    z-index: 1;
+}
+.meniu li:hover{
+    background-color: rgb(245, 196, 91);
+
+}
+.meniu>li:hover .submeniu li
+{
+    display:block;
+}
+ul { padding: 0px;}
+.submeniu {
+
+    position:relative;
+    right: 2px;
+}
+.submeniu li{
+    width:100%;
+    list-style-type:none;
+	background:rgb(240, 238, 166);
+	border-width: 2px;
+	border-style: solid;
+	border-color: black;
+    display:none;
+}
+
+
+@media screen and (max-width:750px) {
+
+    ul.meniu{
+        display:none;
+        transform-origin: center top;
+    }
+    ul.meniu li{
+        width:100%;
+    }
+
+    #chk-meniu:checked~ul.meniu{
+        display:block;
+        animation: animatie_meniu 0.7s 1 linear;
+
+    }
+
+    #img_meniu{
+        height: 30px;
+        width:auto;
+        display: inline-block;
+    }
+
+    #fms {
+        width: 30px;
+    }
+    #top {
+        font-size: 30px;
+    }
+    #login {
+        top: 8px;
+        right: 8px;
+        font-size: 14px;
+    }
+
+    #login > a {
+        padding: 2px;
+    }
+
+    #user-info {
+        font-size: 12px;
+        top: 5px;
+        right: 5px;
+    }
+
+    #lvl {
+        font-size: 14px;
+    }
+    #name {
+        font-size: 17px;
+    }
+
+}
+
+@keyframes animatie_meniu{
+    0%{ transform:scaleY(0);}
+    100%{transform:scaleY(1);}
+}
+
+@keyframes animatie_fms{
+    0%{ transform:rotateY(0deg);}
+    100%{ transform:rotateY(360deg);}
+}

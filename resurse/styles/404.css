@@ -1,0 +1,11 @@
+
+  main {
+	color: white;
+	font-size: 150px;
+	-webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: black;
+  }
+
+  body{
+      background-image: url("../imagini/map1.jpg");
+  }

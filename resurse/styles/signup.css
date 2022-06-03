@@ -1,0 +1,57 @@
+#signup-form  { 
+    display: table;      
+    margin-left:auto;
+     margin-right: auto;
+     border: solid rgb(255, 182, 46) 2px;
+     border-radius: 25px;
+     text-align:center;
+     background-color: rgb(255, 220, 154);
+     padding: 10px;
+     font-size: 20px;
+    border-spacing: 10px;
+}
+#signup-form p {
+    display: table-row; 
+}
+label { 
+    display: table-cell; 
+    text-align:left;
+}
+strong {
+    display: table-cell;
+}
+input { display: table-cell; }
+
+[type="radio"] {
+    display: inline;
+}
+
+body, html{
+    height: 100%;
+}
+
+footer {
+    position: absolute;
+    bottom: 10px;
+    right: 80px;
+    left: 80px;
+}
+
+
+#ok {
+    color:green;
+}
+
+#exists {
+    color: red;
+}
+
+#kingdom-buttons {
+    text-align: center;
+    font-size: 17px;
+}
+#race-buttons {
+    font-size: 17px;
+    text-align: center;
+}
+

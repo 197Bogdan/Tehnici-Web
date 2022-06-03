@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<title>FMS Guides</title>
+		<meta charset="UTF-8">
+		<meta name="description" content="Singurul site cu tutoriale de metin ca la carte,
+										  gandit matematic si scris pe baza codului sursa -
+										  despre iteme, bonusuri, skilluri, buguri si altele">
+		<meta name="keywords" content="Metin2, oficial, tutorial, ghid, bonusuri, pvp, pvm, perfect, crescut, skill, set, privat">
+		<meta name="author" content="Bogdan Putineanu">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="apple-touch-icon" sizes="180x180" href="resurse/ico/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="resurse/ico/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="resurse/ico/favicon-16x16.png">
+		<link rel="manifest" href="resurse/ico/site.webmanifest">
+		<link rel="mask-icon" href="resurse/ico/safari-pinned-tab.svg" color="#5bbad5">
+		<meta name="msapplication-TileColor" content="#da532c">
+		<meta name="theme-color" content="#ffffff">
+		<link rel="stylesheet" href="./resurse/styles/html.css">
+        <link rel="stylesheet" href="./resurse/styles/header.css">
+        <link rel="stylesheet" href="./resurse/styles/footer.css">
+        <link rel="stylesheet" href="./resurse/styles/signup.css">
+
+        <script type="text/javascript" src="../../resurse/scripts/header.js"></script>
+	</head>
+
+<body>
+
+	<%- include("../fragmente/header.ejs")  %>
+
+	<main>
+		<form id="signup-form" method="post" action="http://localhost:8081/signup">
+            <p><label for="username-input" id="username">Username:</label> <input id="username-input" type="text" name="username"></p>
+            <p><label for="password-input" id="password">Password:</label> <input id="password-input" type="password" name="password"></p>
+            <p>
+                <label id="race">Race: </label>
+                <label id="race-buttons">
+                    Warrior<input type="radio" value="Warrior" name="race">
+                    Sura <input type="radio" value="Sura" name="race">
+                    Ninja<input type="radio" value="Ninja" name="race">
+                    Shaman<input type="radio" value="Shaman" name="race">
+                </label>
+            </p>
+            <p>
+                <label id="kingdom">Kingdom: </label>
+                <label id="kingdom-buttons">
+                Jinno<input type="radio" value="Jinno" name="kingdom">
+                Shinsoo<input type="radio" value="Shinsoo" name="kingdom">
+                Chunjo<input type="radio" value="Chunjo" name="kingdom">
+                </label>
+            </p>
+            <p>
+                <% if(locals.answer == "ok") {%>
+                    <strong id="ok">Account created succesfully!</strong>
+                <% } else if(locals.answer == "exists") { %>
+                    <strong id="exists"e>Account name already in use!</strong>
+                <% } else { %>
+                    <strong id="empty"></strong>
+                <% } %>
+                <input type="submit" value="Sign Up">
+             </p>
+        </form>
+	</main>
+
+	<%- include("../fragmente/footer.ejs") %>
+
+</body>
+</html>
+
